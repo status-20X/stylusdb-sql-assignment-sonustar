@@ -1,10 +1,10 @@
 function parseQuery(query) {
     const selectRegex = /SELECT (.+) FROM (.+)/i;
-    //                           field     table
+    //                           field     
     const match = query.match(selectRegex);
 
     if (match) {
-        const [, fields, table] = match;
+        const [ ,fields, table] = match;
         return {
             fields: fields.split(',').map(field => field.trim()),
             table: table.trim()
